@@ -610,7 +610,9 @@
     IGListSectionMap *map = self.sectionMap;
 
     // collect items that have changed since the last update
-    NSMutableSet *updatedObjects = [NSMutableSet new];
+    // NSMutableSet *updatedObjects = [NSMutableSet new];
+    // 临时修复顺序问题
+    NSMutableOrderedSet* updatedObjects = [NSMutableOrderedSet new];
 
     // push the view controller and collection context into a local thread container so they are available on init
     // for IGListSectionController subclasses after calling [super init]
